@@ -41,8 +41,13 @@
                     <a class="brand" href="{{ URL::to('/') }}">H-SC Event Manager</a>
                     <div class="nav-collapse collapse">
                         <ul class="nav">
+                            @if (Request::segment(1) == 'manager')
+                            <li><a href="{{ URL::to('/') }}">Calendar</a></li>
+                            <li class="active"><a href="{{ URL::to('manager') }}">Manager</a></li>
+                            @else
                             <li class="active"><a href="{{ URL::to('/') }}">Calendar</a></li>
                             <li><a href="{{ URL::to('manager') }}">Manager</a></li>
+                            @endif
                         </ul>
                         @if (Auth::guest())
                           {{ Form::open(array('url' => '/login', 'class' => 'navbar-form pull-right')) }}
