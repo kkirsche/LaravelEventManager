@@ -33,7 +33,7 @@
                 <div class="row">
                     <div class="span9">
                         <ul class="breadcrumb">
-                            <li class="active"><a href="{{ URL::to('manager') }}" title="Home">Home</a> <span class="divider">/</span></li>
+                            <li class="active"><a href="{{ URL::to('manager') }}" title="Home"><i class="icon-home"></i> Home</a> <span class="divider">/</span></li>
                         </ul>
                     </div>
                 </div>
