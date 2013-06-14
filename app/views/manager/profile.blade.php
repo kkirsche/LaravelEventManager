@@ -43,32 +43,57 @@
                         {{ Form::open(array('url' => '/manager/profile', 'class' => 'span9')) }}
                             <fieldset>
                                 <legend>Name</legend>
-                                {{ Form::label('Username', 'Username:') }}
-                                {{ Form::text('Username', '', array('class' => 'span9', 'placeholder' => 'Username')) }}
-                                {{ Form::label('First Name', 'First Name:') }}
-                                {{ Form::text('First Name', '', array('class' => 'span9', 'placeholder' => 'First Name')) }}
-                                {{ Form::label('Last Name', 'Last Name:') }}
-                                {{ Form::text('Last Name', '', array('class' => 'span9', 'placeholder' => 'Last Name')) }}
-                                {{ Form::label('DisplayName', 'Display Name publicly as:') }}
-                                {{ Form::text('DisplayName', '', array('class' => 'span9', 'placeholder' => 'Display Name publicly as (required)', 'required')) }}
+                                <div class="row">
+                                    <div class="span4">
+                                        {{ Form::label('Username', 'Username:') }}
+                                        {{ Form::text('Username', '', array('class' => 'span4', 'placeholder' => 'Username')) }}
+                                    </div>
+                                    <div class="offset1 span4">
+                                        {{ Form::label('DisplayName', 'Display Name publicly as:') }}
+                                        {{ Form::text('DisplayName', '', array('class' => 'span4', 'placeholder' => 'Display Name publicly as (required)', 'required')) }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="span4">
+                                        {{ Form::label('First Name', 'First Name:') }}
+                                        {{ Form::text('First Name', '', array('class' => 'span4', 'placeholder' => 'First Name')) }}
+                                    </div>
+                                    <div class="offset1 span4">
+                                        {{ Form::label('Last Name', 'Last Name:') }}
+                                        {{ Form::text('Last Name', '', array('class' => 'span4', 'placeholder' => 'Last Name')) }}
+                                    </div>
+                                </div>
                             </fieldset>
                             <fieldset>
                                 <legend>Contact Info</legend>
-                                {{ Form::label('Email', 'Email:') }}
-                                {{ Form::email('Email', '', array('class' => 'span9', 'placeholder' => 'Email (required)', 'required')) }}
-                                {{ Form::label('Website', 'Website:') }}
-                                {{ Form::text('Website', '', array('class' => 'span9', 'placeholder' => 'Website')) }}
+                                <div class="row">
+                                    <div class="span4">
+                                        {{ Form::label('Email', 'Email:') }}
+                                        {{ Form::email('Email', '', array('class' => 'span4', 'placeholder' => 'Email (required)', 'required')) }}
+                                    </div>
+                                    <div class="offset1 span4">
+                                        {{ Form::label('Website', 'Website:') }}
+                                        {{ Form::text('Website', '', array('class' => 'span4', 'placeholder' => 'Website')) }}
+                                    </div>
+                                </div>
                             </fieldset>
                             <fieldset>
                                 <legend>Role</legend>
-                                <!-- To be added -->
+                                {{ Form::label('userRole', 'Role:') }}
+                                {{ Form::select('size', array('0' => 'User', '1' => 'Author', '2' => 'Editor', '3' => 'Administrator'), '0'); }}
                             </fieldset>
                             <fieldset>
                                 <legend>Password</legend>
-                                {{ Form::label('Password', 'New Password:') }}
-                                <input class="span9" type="password" name="Password" placeholder="Password">
-                                {{ Form::label('Confirm Password', 'Confirm New Password:') }}
-                                <input class="span9" type="password" name="Confirm Password" placeholder="Confirm Password">
+                                <div class="row">
+                                    <div class="span4">
+                                        {{ Form::label('Password', 'New Password:') }}
+                                        <input class="span4" type="password" name="Password" placeholder="Password">
+                                    </div>
+                                    <div class="offset1 span4">
+                                        {{ Form::label('Confirm Password', 'Confirm New Password:') }}
+                                        <input class="span4" type="password" name="Confirm Password" placeholder="Confirm Password">
+                                    </div>
+                                </div>
                             </fieldset>
                             <button type="submit" class="btn btn-primary">Update Profile</button>
                           {{ Form::close() }}
