@@ -20,7 +20,14 @@ Route::get('/', function()
 // Show login page
 Route::get('/login', function()
 {
-    return View::make('login');
+    if (Auth::guest())
+    {
+        return View::make('login');
+    }
+    else
+    {
+        return Redirect::to('/manager');
+    }
 });
 
 // Take user login
