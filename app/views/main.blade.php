@@ -45,7 +45,7 @@
                             <li><a href="{{ URL::to('/') }}">Calendar</a></li>
                             <li class="active"><a href="{{ URL::to('manager') }}">Manager</a></li>
                             @else
-                            <li class="active"><a href="{{ URL::to('/') }}">Calendar</a></li>
+                            <li class="active"><a href="{{ URL::to('/') }}"><i class="icon-calendar"></i> Calendar</a></li>
                             <li><a href="{{ URL::to('manager') }}">Manager</a></li>
                             @endif
                         </ul>
@@ -53,16 +53,15 @@
                           {{ Form::open(array('url' => '/login', 'class' => 'navbar-form pull-right')) }}
                             {{ Form::text('username', '', array('class' => 'span2', 'placeholder' => 'Username')) }}
                             <input class="span2" type="password" name="password" placeholder="Password">
-                            <button type="submit" class="btn btn-primary">Sign in</button>
+                            <button type="submit" class="btn btn-primary">Sign in <i class="icon-signin"></i></button>
                           {{ Form::close() }}
                         @else
-                            <a href="{{ URL::to('/logout') }}" class="pull-right" title="Log out"><button class="btn btn-primary">Log Out</button></a>
+                            <a href="{{ URL::to('/logout') }}" class="pull-right" title="Log out"><button class="btn btn-primary">Log Out <i class="icon-signout"></i></button></a>
                         @endif
                     </div><!--/.nav-collapse -->
                 </div>
             </div>
         </div>
-
         @yield('bodyContent')
 
         <div class="bottom-menu bottom-menu-large">
@@ -131,6 +130,9 @@
 
         <script src="{{ URL::asset('js/fullcalendar.min.js') }}"></script>
         <script src="{{ URL::asset('js/gcal.js') }}"></script>
+        @if (Request::segment(2) == 'createEvent' || Request::segment(2) == 'createCalendar')
+            <script src="{{ URL::asset('js/flatui-radio.js') }}"></script>
+        @endif
         <script>
         $(document).ready(function() {
           var date = new Date();
@@ -144,7 +146,7 @@
               center: 'title',
               right: 'prev,next today'
             },
-            editable: true,
+            editable: false,
             events: [
                 {
                     title: 'All Day Event',
@@ -190,7 +192,13 @@
                     end: new Date(y, m, 29),
                     url: 'http://google.com/'
                 }
-            ]
+            ],
+            eventClick: function(event) {
+                if (event.url) {
+                    window.open(event.url);
+                    return false;
+                }
+            }
           });
         });
         </script>
