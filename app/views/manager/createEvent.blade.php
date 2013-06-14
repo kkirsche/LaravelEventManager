@@ -142,6 +142,7 @@
                                     </div>
                                 </div>
                             </fieldset>
+                            <hr />
                             <button type="submit" class="btn btn-primary">Create Event</button>
                           {{ Form::close() }}
                     </div>

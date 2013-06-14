@@ -95,6 +95,7 @@
                                     </div>
                                 </div>
                             </fieldset>
+                            <hr />
                             <button type="submit" class="btn btn-primary">Update Profile</button>
                           {{ Form::close() }}
                     </div>
