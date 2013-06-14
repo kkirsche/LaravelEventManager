@@ -133,8 +133,11 @@
 
         <script src="{{ URL::asset('js/fullcalendar.min.js') }}"></script>
         <script src="{{ URL::asset('js/gcal.js') }}"></script>
-        @if (Request::segment(2) == 'createEvent' || Request::segment(2) == 'createCalendar')
+        @if (Request::segment(2) == 'createEvent' || Request::segment(2) == 'createCalendar' || Request::segment(2) == 'settings')
             <script src="{{ URL::asset('js/flatui-radio.js') }}"></script>
+        @endif
+        @if (Request::segment(2) == 'settings')
+            <script src="{{ URL::asset('js/flatui-checkbox.js') }}"></script>
         @endif
         <script>
         $(document).ready(function() {
