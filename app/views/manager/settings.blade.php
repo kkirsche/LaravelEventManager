@@ -42,61 +42,71 @@
                     <div class="span9">
                         {{ Form::open(array('url' => '/manager/profile', 'class' => 'span9')) }}
                             <fieldset>
-                                <legend>Name</legend>
+                                <legend>General</legend>
                                 <div class="row">
                                     <div class="span4">
-                                        {{ Form::label('Username', 'Username:') }}
-                                        {{ Form::text('Username', '', array('class' => 'span4', 'placeholder' => 'Username')) }}
+                                        {{ Form::label('siteTitle', 'Site Title:') }}
+                                        {{ Form::text('siteTitle', '', array('class' => 'span4', 'placeholder' => 'Site Title', 'required')) }}
                                     </div>
                                     <div class="offset1 span4">
-                                        {{ Form::label('DisplayName', 'Display Name publicly as:') }}
-                                        {{ Form::text('DisplayName', '', array('class' => 'span4', 'placeholder' => 'Display Name publicly as (required)', 'required')) }}
+                                        {{ Form::label('siteAddress', 'Site Address (URL):') }}
+                                        {{ Form::text('siteAddress', '', array('class' => 'span4', 'placeholder' => 'Site Address', 'required')) }}
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="span4">
-                                        {{ Form::label('First Name', 'First Name:') }}
-                                        {{ Form::text('First Name', '', array('class' => 'span4', 'placeholder' => 'First Name')) }}
+                                        {{ Form::label('adminEmail', 'Administrative Email Address:') }}
+                                        {{ Form::text('adminEmail', '', array('class' => 'span4', 'placeholder' => 'Administrative Email Address')) }}
+                                        <small><em>This address is used for admin purposes, like new user notifications</em></small>
                                     </div>
                                     <div class="offset1 span4">
-                                        {{ Form::label('Last Name', 'Last Name:') }}
-                                        {{ Form::text('Last Name', '', array('class' => 'span4', 'placeholder' => 'Last Name')) }}
-                                    </div>
-                                </div>
-                            </fieldset>
-                            <fieldset>
-                                <legend>Contact Info</legend>
-                                <div class="row">
-                                    <div class="span4">
-                                        {{ Form::label('Email', 'Email:') }}
-                                        {{ Form::email('Email', '', array('class' => 'span4', 'placeholder' => 'Email (required)', 'required')) }}
-                                    </div>
-                                    <div class="offset1 span4">
-                                        {{ Form::label('Website', 'Website:') }}
-                                        {{ Form::text('Website', '', array('class' => 'span4', 'placeholder' => 'Website')) }}
+                                        <br />
+                                        {{ Form::label('', 'User Registration:') }}
+                                        <label class="checkbox" for="membership">
+                                            <span class="icons"><span class="first-icon fui-checkbox-unchecked"></span><span class="second-icon fui-checkbox-checked"></span></span><input type="checkbox" value="1" id="membership" name="membership" data-toggle="checkbox">
+                                            Anyone can register
+                                      </label>
                                     </div>
                                 </div>
                             </fieldset>
                             <fieldset>
-                                <legend>Role</legend>
-                                {{ Form::label('userRole', 'Role:') }}
-                                {{ Form::select('size', array('0' => 'User', '1' => 'Author', '2' => 'Editor', '3' => 'Administrator'), '0'); }}
-                            </fieldset>
-                            <fieldset>
-                                <legend>Password</legend>
+                                <legend>Date Formats</legend>
                                 <div class="row">
                                     <div class="span4">
-                                        {{ Form::label('Password', 'New Password:') }}
-                                        <input class="span4" type="password" name="Password" placeholder="Password">
+                                        {{ Form::label('dateFormat', 'Date Format:') }}
+                                        <label class="radio">
+                                        <span class="icons"><span class="first-icon fui-radio-checked"></span><span class="second-icon fui-radio-unchecked"></span></span><input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" data-toggle="radio">
+                                        June 14, 2013
+                                      </label>
+                                      <label class="radio">
+                                        <span class="icons"><span class="first-icon fui-radio-unchecked"></span><span class="second-icon fui-radio-checked"></span></span><input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" data-toggle="radio">
+                                        2013/06/14
+                                      </label>
+                                      <label class="radio">
+                                        <span class="icons"><span class="first-icon fui-radio-unchecked"></span><span class="second-icon fui-radio-checked"></span></span><input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" data-toggle="radio">
+                                        14/06/2013
+                                      </label>
                                     </div>
                                     <div class="offset1 span4">
-                                        {{ Form::label('Confirm Password', 'Confirm New Password:') }}
-                                        <input class="span4" type="password" name="Confirm Password" placeholder="Confirm Password">
+                                        {{ Form::label('timeFormat', 'Time Format:') }}
+                                        <label class="radio">
+                                        <span class="icons"><span class="first-icon fui-radio-checked"></span><span class="second-icon fui-radio-unchecked"></span></span><input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" data-toggle="radio">
+                                        6:41 pm
+                                      </label>
+                                      <label class="radio">
+                                        <span class="icons"><span class="first-icon fui-radio-unchecked"></span><span class="second-icon fui-radio-checked"></span></span><input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" data-toggle="radio">
+                                        6:41 PM
+                                      </label>
+                                      <label class="radio">
+                                        <span class="icons"><span class="first-icon fui-radio-unchecked"></span><span class="second-icon fui-radio-checked"></span></span><input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" data-toggle="radio">
+                                        18:41
+                                      </label>
                                     </div>
                                 </div>
                             </fieldset>
-                            <button type="submit" class="btn btn-primary">Update Profile</button>
-                          {{ Form::close() }}
+                            <hr />
+                            <button type="submit" class="btn btn-primary">Update Settings</button>
+                        {{ Form::close() }}
                     </div>
                 </div>
             </div>
