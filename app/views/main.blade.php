@@ -44,6 +44,9 @@
                             @if (Request::segment(1) == 'manager')
                             <li><a href="{{ URL::to('/') }}">Calendar</a></li>
                             <li class="active"><a href="{{ URL::to('manager') }}">Manager</a></li>
+                            @elseif (Request::segment(1) == 'login')
+                            <li><a href="{{ URL::to('/') }}"><i class="icon-calendar"></i> Calendar</a></li>
+                            <li><a href="{{ URL::to('manager') }}">Manager</a></li>
                             @else
                             <li class="active"><a href="{{ URL::to('/') }}"><i class="icon-calendar"></i> Calendar</a></li>
                             <li><a href="{{ URL::to('manager') }}">Manager</a></li>
