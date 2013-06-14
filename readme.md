@@ -35,6 +35,6 @@ This application is open-sourced software licensed under the [MIT license](http:
 
 ![http://i.imgur.com/TIstVxh.png](http://i.imgur.com/TIstVxh.png)<br />
 ![http://i.imgur.com/vQMviia.png](http://i.imgur.com/vQMviia.png)<br />
-![http://i.imgur.com/ndzKviR.png](http://i.imgur.com/ndzKviR.png)<br />
-![http://i.imgur.com/IYxGMFr.png](http://i.imgur.com/IYxGMFr.png)<br />
+![http://i.imgur.com/zE2vFGK.jpg](http://i.imgur.com/zE2vFGK.jpg)<br />
+![http://i.imgur.com/0TxO0yu.jpg](http://i.imgur.com/0TxO0yu.jpg)<br />
 ![http://i.imgur.com/9Q1ACHy.jpg](http://i.imgur.com/9Q1ACHy.jpg)<br />
