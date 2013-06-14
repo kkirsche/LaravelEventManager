@@ -1,6 +1,6 @@
 ## Laravel Based Event Manager
 
-## Current Version: 0.1.0
+## Current Version: 0.1.3
 
 ### Versioning
 
@@ -33,8 +33,12 @@ This application is open-sourced software licensed under the [MIT license](http:
 
 ### Screenshots
 
-![http://i.imgur.com/TIstVxh.png](http://i.imgur.com/TIstVxh.png)<br />
-![http://i.imgur.com/vQMviia.png](http://i.imgur.com/vQMviia.png)<br />
+![http://i.imgur.com/MSVjMMJ.jpg](http://i.imgur.com/MSVjMMJ.jpg)<br />
+<hr />
+![http://i.imgur.com/AqpHWJF.jpg](http://i.imgur.com/AqpHWJF.jpg)<br />
+<hr />
 ![http://i.imgur.com/zE2vFGK.jpg](http://i.imgur.com/zE2vFGK.jpg)<br />
+<hr />
 ![http://i.imgur.com/0TxO0yu.jpg](http://i.imgur.com/0TxO0yu.jpg)<br />
+<hr />
 ![http://i.imgur.com/9Q1ACHy.jpg](http://i.imgur.com/9Q1ACHy.jpg)<br />
