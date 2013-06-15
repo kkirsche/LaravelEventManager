@@ -12,22 +12,28 @@
 */
 
 // Show normal homepage
-Route::get('/', 'HomeController@getHome');
+Route::get('/', 'Events\Controllers\Home\HomeController@getHome');
 
 // Show login page
-Route::get('/login', 'LoginController@getLogin');
+Route::get('/login', 'Events\Controllers\Login\LoginController@getLogin');
 
 // Take user login
-Route::post('/login', 'LoginController@postLogin');
+Route::post('/login', 'Events\Controllers\Login\LoginController@postLogin');
 
 // Log user out and redirect them to the login page
-Route::get('/logout', 'LoginController@getLogout');
+Route::get('/logout', 'Events\Controllers\Login\LoginController@getLogout');
 
 // Show user registration page
-Route::get('/registerUser', 'UserController@getRegisterUser');
+Route::get('/registerUser', 'Events\Controllers\User\UserController@getRegisterUser');
 
 // Take user registration
-Route::post('/registerUser', 'UserController@postRegisterUser');
+Route::post('/registerUser', 'Events\Controllers\User\UserController@postRegisterUser');
+
+// Show forgotten password page
+Route::get('/forgotPassword', 'Events\Controllers\User\UserController@getForgotPassword');
+
+// Take forgotten password page
+Route::post('/forgotPassword', 'Events\Controllers\User\UserController@postForgotPassword');
 
 // This Route handles all of the Manager sections. It relies on the view being the same name as the URL
-Route::get('/manager/{nav?}', 'ManagerController@getManager');
+Route::get('/manager/{nav?}', 'Events\Controllers\Manager\ManagerController@getManager');

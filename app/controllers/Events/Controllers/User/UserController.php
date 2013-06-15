@@ -1,7 +1,27 @@
 <?php
 
+namespace Events\Controllers\User;
+
+use \View, \BaseController, \Input, \Password, \Validator, \DB, \Hash, \Auth;
+
 class UserController extends BaseController
 {
+
+	public function getForgotPassword()
+	{
+		return View::make('forgotPassword');
+	}
+
+	public function postForgotPassword()
+	{
+
+		$credentials = array('email' => Input::get('email'));
+
+		return Password::remind($credentials, function($message, $user)
+		{
+			$message->subject('Your Password Reminder');
+		});
+	}
 
 	public function getRegisterUser()
 	{

@@ -1,5 +1,9 @@
 <?php
 
+namespace Events\Controllers\Login;
+
+use \Auth, \BaseController, \View, \Redirect, \Input;
+
 class LoginController extends BaseController
 {
 
@@ -17,8 +21,7 @@ class LoginController extends BaseController
 
 	public function postLogin()
 	{
-		$user = array
-		(
+		$user = array(
 	        'username' => Input::get('username'),
 	        'password' => Input::get('password')
 	    );
@@ -36,7 +39,7 @@ class LoginController extends BaseController
 	public function getLogout()
 	{
 		Auth::logout();
-    	return Redirect::to('login');
+    	return Redirect::to('/login');
 	}
 
 }
