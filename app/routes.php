@@ -37,3 +37,6 @@ Route::post('/forgotPassword', 'Events\Controllers\User\UserController@postForgo
 
 // This Route handles all of the Manager sections. It relies on the view being the same name as the URL
 Route::get('/manager/{nav?}', 'Events\Controllers\Manager\ManagerController@getManager');
+
+// Take update profile
+Route::post('/manager/profile', 'Events\Controllers\User\UserController@postMyProfile');
