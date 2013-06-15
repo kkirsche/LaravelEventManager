@@ -39,7 +39,7 @@ This application is open-sourced software licensed under the [MIT license](http:
 <hr />
 ![http://i.imgur.com/zE2vFGK.jpg](http://i.imgur.com/zE2vFGK.jpg)<br />
 <hr />
-![http://i.imgur.com/0TxO0yu.jpg](http://i.imgur.com/0TxO0yu.jpg)<br />
+![http://i.imgur.com/gXqbtID.jpg](http://i.imgur.com/gXqbtID.jpg)<br />
 <hr />
 ![http://i.imgur.com/9Q1ACHy.jpg](http://i.imgur.com/9Q1ACHy.jpg)<br />
 
