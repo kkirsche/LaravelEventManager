@@ -2,7 +2,7 @@
 
 namespace Events\Controllers\Login;
 
-use \Auth, \BaseController, \View, \Redirect, \Input, \Session;
+use \Auth, \BaseController, \View, \Redirect, \Input, \User, \Session;
 
 class LoginController extends BaseController
 {
@@ -21,13 +21,16 @@ class LoginController extends BaseController
 
 	public function postLogin()
 	{
-		$user = array(
+		$user = array
+		(
 	        'username' => Input::get('username'),
 	        'password' => Input::get('password')
 	    );
 
 	    if (Auth::attempt(array('username' => $user['username'], 'password' => $user['password']), true))
 	    {
+	    	$userModel = new User;
+	    	$userModel->createSession();
 	        return Redirect::intended('/manager');
 	    }
 	    else

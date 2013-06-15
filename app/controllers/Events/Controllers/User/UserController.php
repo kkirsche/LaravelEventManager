@@ -2,7 +2,7 @@
 
 namespace Events\Controllers\User;
 
-use \View, \BaseController, \Input, \Password, \Validator, \DB, \Hash, \Auth, \User;
+use \View, \BaseController, \Input, \Password, \Validator, \DB, \Hash, \Auth, \User, \Session, \Redirect;
 
 class UserController extends BaseController
 {
@@ -51,6 +51,7 @@ class UserController extends BaseController
         	{
 		        if (Auth::attempt(array('username' => $user['username'], 'password' => $user['password']), true))
 		        {
+	    			$userModel->createSession();
 		            return View::make('/manager');
 		        }
 		        else
@@ -67,5 +68,41 @@ class UserController extends BaseController
 	    {
 	        return View::make('registerUser');
 	    }
+	}
+
+	public function postMyProfile()
+	{
+		$user = array(
+	        'username' => Input::get('username'),
+	        'displayName' => Input::get('displayName'),
+	        'firstName' => Input::get('firstName'),
+	        'lastName' => Input::get('lastName'),
+	        'email' => Input::get('email'),
+	        'website' => Input::get('website'),
+	        'newPassword' => Input::get('newPassword'),
+	        'confirmNewPassword' => Input::get('confirmNewPassword'),
+	        'role' => Input::get('userRole')
+	    );
+
+	    $rules = array(
+	        'email' => 'required|email',
+	        'username' => 'required',
+	        'displayName' => 'required',
+	        'role' => 'required'
+	    );
+
+	    $v = Validator::make($user, $rules);
+	    if ( $v->passes() )
+	    {
+	    	$userModel = new User;
+	    	$userModel->postMyProfile($user);
+	    	Session::flush();
+	    	$userModel->createSession();
+    		return Redirect::to('manager/profile');
+	    }
+	    else
+    	{
+    		return View::make('/manager/profile');
+    	}
 	}
 }
