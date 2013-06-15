@@ -2,7 +2,7 @@
 
 namespace Events\Controllers\User;
 
-use \View, \BaseController, \Input, \Password, \Validator, \DB, \Hash, \Auth;
+use \View, \BaseController, \Input, \Password, \Validator, \DB, \Hash, \Auth, \User;
 
 class UserController extends BaseController
 {
@@ -46,22 +46,22 @@ class UserController extends BaseController
 
 	    if ( $v->passes() )
 	    {
-	        $user['hashedPassword'] = Hash::make($user['password']);
-
-	        $id = DB::table('users')->insertGetId(array(
-	            'email' => $user['email'],
-	            'username' => $user['username'],
-	            'password' => $user['hashedPassword']
-	        ));
-
-	        if (Auth::attempt(array('username' => $user['username'], 'password' => $user['password']), true))
-	        {
-	            return View::make('/manager');
-	        }
-	        else
-	        {
-	            return "There was a problem...";
-	        }
+	    	$userModel = new User;
+	        if ($userModel->postRegisterUser($user))
+        	{
+		        if (Auth::attempt(array('username' => $user['username'], 'password' => $user['password']), true))
+		        {
+		            return View::make('/manager');
+		        }
+		        else
+		        {
+		            return "There was a problem...";
+		        }
+	    	}
+	    	else
+		    {
+		        return View::make('registerUser');
+		    }
 	    }
 	    else
 	    {
