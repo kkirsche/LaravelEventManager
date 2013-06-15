@@ -2,7 +2,7 @@
 
 namespace Events\Controllers\Login;
 
-use \Auth, \BaseController, \View, \Redirect, \Input;
+use \Auth, \BaseController, \View, \Redirect, \Input, \Session;
 
 class LoginController extends BaseController
 {
@@ -28,10 +28,12 @@ class LoginController extends BaseController
 
 	    if (Auth::attempt(array('username' => $user['username'], 'password' => $user['password']), true))
 	    {
-	        return Redirect::to('/manager');
+	        return Redirect::intended('/manager');
 	    }
 	    else
 	    {
+	    	Session::put('error', 'Yes.');
+	    	Session::put('reason', 'Username or password were incorrect.');
 	        return View::make('login');
 	    }
 	}
@@ -39,6 +41,7 @@ class LoginController extends BaseController
 	public function getLogout()
 	{
 		Auth::logout();
+		Session::flush();
     	return Redirect::to('/login');
 	}
 
