@@ -1,6 +1,6 @@
 ## Laravel Based Event Manager
 
-## Current Version: 0.2.0
+## Current Version: 0.3.0
 
 ### Versioning
 

@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => null, 'name' => null),
+	'from' => array('address' => 'kev.kirsche@gmail.com', 'name' => 'Kevin Kirsche'),
 
 	/*
 	|--------------------------------------------------------------------------
