@@ -59,7 +59,12 @@
                             <button type="submit" class="btn btn-primary">Sign in <i class="icon-signin"></i></button>
                           {{ Form::close() }}
                         @else
-                            <a href="{{ URL::to('/logout') }}" class="pull-right" title="Log out"><button class="btn btn-primary">Log Out <i class="icon-signout"></i></button></a>
+                            <div class="pull-right">
+                                @if (Session::has('displayName'))
+                                    <span class="whiteText">Hi There, {{ Session::get('displayName') }} </span>
+                                @endif
+                                <a href="{{ URL::to('/logout') }}" title="Log out"><button class="btn btn-primary">Log Out <i class="icon-signout"></i></button></a>
+                            </div>
                         @endif
                     </div><!--/.nav-collapse -->
                 </div>

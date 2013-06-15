@@ -1,5 +1,9 @@
 <?php
 
+namespace Events\Controllers\Manager;
+
+use \View, \BaseController;
+
 class ManagerController extends BaseController
 {
 	public function __construct()
