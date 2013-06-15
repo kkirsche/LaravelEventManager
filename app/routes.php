@@ -12,10 +12,7 @@
 */
 
 // Show normal homepage
-Route::get('/', function()
-{
-	return View::make('home');
-});
+Route::get('/', 'HomeController@getHome');
 
 // Show login page
 Route::get('/login', 'LoginController@getLogin');
