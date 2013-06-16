@@ -82,35 +82,26 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 				$updatedProfileInformation['hashedNewPassword'] = Hash::make($updatedProfileInformation['newPassword']);
 			}
 		}
-		if (isset($updatedProfileInformation['hashedNewPassword']))
+
+		$user = User::find(Session::get('userID'));
+		$user->username 	= $updatedProfileInformation['username'];
+		$user->displayName	= $updatedProfileInformation['displayName'];
+		$user->firstName	= $updatedProfileInformation['firstName'];
+		$user->lastName		= $updatedProfileInformation['lastName'];
+		$user->email 		= $updatedProfileInformation['email'];
+		$user->website		= $updatedProfileInformation['website'];
+		$user->role 		= $updatedProfileInformation['role'];
+		$user->password 	= (isset($updatedProfileInformation['hashedNewPassword'])) ? $updatedProfileInformation['hashedNewPassword'] : $user->password;
+
+		if ($user->save())
 		{
-			DB::table('users')
-				->where('id', Session::get('userID'))
-				->update(array(
-					'username' => $updatedProfileInformation['username'],
-			        'displayName' => $updatedProfileInformation['displayName'],
-			        'firstName' => $updatedProfileInformation['firstName'],
-			        'lastName' => $updatedProfileInformation['lastName'],
-			        'email' => $updatedProfileInformation['email'],
-			        'website' => $updatedProfileInformation['website'],
-			        'role' => $updatedProfileInformation['role'],
-			        'password' => $updatedProfileInformation['hashedNewPassword']
-			));
+			return true;
 		}
 		else
 		{
-			DB::table('users')
-				->where('id', Session::get('userID'))
-				->update(array(
-					'username' => $updatedProfileInformation['username'],
-			        'displayName' => $updatedProfileInformation['displayName'],
-			        'firstName' => $updatedProfileInformation['firstName'],
-			        'lastName' => $updatedProfileInformation['lastName'],
-			        'email' => $updatedProfileInformation['email'],
-			        'website' => $updatedProfileInformation['website'],
-			        'role' => $updatedProfileInformation['role']
-				));
+			return false;
 		}
+
 	}
 
 	/**
