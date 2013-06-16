@@ -46,12 +46,11 @@ class UserController extends BaseController
 
 	    if ( $v->passes() )
 	    {
-	    	$userModel = new User;
 	        if ($userModel->postRegisterUser($user))
         	{
 		        if (Auth::attempt(array('username' => $user['username'], 'password' => $user['password']), true))
 		        {
-	    			$userModel->createSession();
+	    			User::createSession();
 		            return View::make('/manager');
 		        }
 		        else
@@ -92,13 +91,18 @@ class UserController extends BaseController
 	    );
 
 	    $v = Validator::make($user, $rules);
-	    if ( $v->passes() )
+	    if ($v->passes())
 	    {
-	    	$userModel = new User;
-	    	$userModel->postMyProfile($user);
-	    	Session::flush();
-	    	$userModel->createSession();
-    		return Redirect::to('manager/profile');
+	    	if(User::postMyProfile($user))
+	    	{
+		    	Session::flush();
+		    	User::createSession();
+	    		return Redirect::to('manager/profile');
+	    	}
+	    	else
+	    	{
+	    		//error?
+	    	}
 	    }
 	    else
     	{

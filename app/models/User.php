@@ -93,11 +93,11 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
 		if($user->save())
 		{
-			return True;
+			return true;
 		}
 		else
 		{
-			return False;
+			return false;
 		}
 	}
 

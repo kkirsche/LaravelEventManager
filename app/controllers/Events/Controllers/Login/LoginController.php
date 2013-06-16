@@ -29,8 +29,7 @@ class LoginController extends BaseController
 
 	    if (Auth::attempt(array('username' => $user['username'], 'password' => $user['password']), true))
 	    {
-	    	$userModel = new User;
-	    	$userModel->createSession();
+	    	$User::createSession();
 	        return Redirect::intended('/manager');
 	    }
 	    else
