@@ -46,7 +46,7 @@ class UserController extends BaseController
 
 	    if ( $v->passes() )
 	    {
-	        if ($userModel->postRegisterUser($user))
+	        if (User::postRegisterUser($user))
         	{
 		        if (Auth::attempt(array('username' => $user['username'], 'password' => $user['password']), true))
 		        {
