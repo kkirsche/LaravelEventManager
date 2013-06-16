@@ -30,7 +30,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	}
 
 	/**
-	 * Put user information int he session for use later
+	 * Put user information in the session for use later
 	 */
 	public function createSession()
 	{
@@ -53,21 +53,21 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	{
 		$userCredentials['hashedPassword'] = Hash::make($userCredentials['password']);
 
-	        if (DB::table('users')->insertGetId(array(
-	            'email' => $userCredentials['email'],
-	            'username' => $userCredentials['username'],
-	            'displayName' => $userCredentials['username'],
-	            'password' => $userCredentials['hashedPassword']
-	        )))
-        	{
-        		//Success
-        		return true;
-        	}
-        	else
-    		{
-    			//Failure
-    			return false;
-    		}
+		$user = new User;
+		$user->email 		= $userCredentials['email'];
+	    $user->username 	= $userCredentials['username'];
+	    $user->displayName 	= $userCredentials['username'];
+	    $user->password 	= $userCredentials['hashedPassword'];
+    	if ($user->save())
+    	{
+    		//Success
+    		return true;
+    	}
+    	else
+		{
+			//Failure
+			return false;
+		}
 	}
 
 	/**
