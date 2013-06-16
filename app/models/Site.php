@@ -17,8 +17,8 @@ class Site extends Eloquent {
 	public static function postSiteSettings($siteSettings)
 	{
 		Config::set('site.title', $siteSettings['siteTitle']);
-		Config::set('site.address', $siteSettings['siteAddress']);
-		Config::set('admin.email', $siteSettings['adminEmail']);
-		Config::set('open.registrations', $siteSettings['openRegistrations']);
+		Config::set('app.url', $siteSettings['siteAddress']);
+		Config::set('mail.from.address', $siteSettings['adminEmail']);
+		Config::set('site.openRegistrations', $siteSettings['openRegistrations']);
 	}
 }
