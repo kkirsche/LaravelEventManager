@@ -50,13 +50,13 @@
                                     </div>
                                     <div class="offset1 span4">
                                         {{ Form::label('siteAddress', 'Site Address (URL):') }}
-                                        {{ Form::text('siteAddress', Config::get('site.address'), array('class' => 'span4', 'placeholder' => 'Site Address', 'required')) }}
+                                        {{ Form::text('siteAddress', Config::get('app.url'), array('class' => 'span4', 'placeholder' => 'Site Address', 'required')) }}
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="span4">
                                         {{ Form::label('adminEmail', 'Administrative Email Address:') }}
-                                        {{ Form::text('adminEmail', Config::get('admin.email'), array('class' => 'span4', 'placeholder' => 'Administrative Email Address')) }}
+                                        {{ Form::text('adminEmail', Config::get('mail.from.address'), array('class' => 'span4', 'placeholder' => 'Administrative Email Address')) }}
                                         <small><em>This address is used for admin purposes, like new user notifications</em></small>
                                     </div>
                                     <div class="offset1 span4">
