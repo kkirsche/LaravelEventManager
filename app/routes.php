@@ -40,3 +40,6 @@ Route::get('/manager/{nav?}', 'Events\Controllers\Manager\ManagerController@getM
 
 // Take update profile
 Route::post('/manager/profile', 'Events\Controllers\User\UserController@postMyProfile');
+
+// Take update profile
+Route::post('/manager/settings', 'Events\Controllers\Manager\ManagerController@postSiteSettings');

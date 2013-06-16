@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>H-SC Event Manager</title>
+        <title>{{ Config::get('site.title') }}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
@@ -38,7 +38,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </a>
-                    <a class="brand" href="{{ URL::to('/') }}">H-SC Event Manager</a>
+                    <a class="brand" href="{{ URL::to('/') }}">{{ Config::get('site.title') }}</a>
                     <div class="nav-collapse collapse">
                         <ul class="nav">
                             @if (Request::segment(1) == 'manager')
