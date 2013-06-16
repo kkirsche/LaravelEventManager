@@ -40,30 +40,30 @@
                 </div>
                 <div class="row">
                     <div class="span9">
-                        {{ Form::open(array('url' => '/manager/profile', 'class' => 'span9')) }}
+                        {{ Form::open(array('url' => '/manager/settings', 'class' => 'span9')) }}
                             <fieldset>
                                 <legend>General</legend>
                                 <div class="row">
                                     <div class="span4">
                                         {{ Form::label('siteTitle', 'Site Title:') }}
-                                        {{ Form::text('siteTitle', '', array('class' => 'span4', 'placeholder' => 'Site Title', 'required')) }}
+                                        {{ Form::text('siteTitle', Config::get('site.title'), array('class' => 'span4', 'placeholder' => 'Site Title', 'required')) }}
                                     </div>
                                     <div class="offset1 span4">
                                         {{ Form::label('siteAddress', 'Site Address (URL):') }}
-                                        {{ Form::text('siteAddress', '', array('class' => 'span4', 'placeholder' => 'Site Address', 'required')) }}
+                                        {{ Form::text('siteAddress', Config::get('site.address'), array('class' => 'span4', 'placeholder' => 'Site Address', 'required')) }}
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="span4">
                                         {{ Form::label('adminEmail', 'Administrative Email Address:') }}
-                                        {{ Form::text('adminEmail', '', array('class' => 'span4', 'placeholder' => 'Administrative Email Address')) }}
+                                        {{ Form::text('adminEmail', Config::get('admin.email'), array('class' => 'span4', 'placeholder' => 'Administrative Email Address')) }}
                                         <small><em>This address is used for admin purposes, like new user notifications</em></small>
                                     </div>
                                     <div class="offset1 span4">
                                         <br />
                                         {{ Form::label('', 'User Registration:') }}
-                                        <label class="checkbox" for="membership">
-                                            <span class="icons"><span class="first-icon fui-checkbox-unchecked"></span><span class="second-icon fui-checkbox-checked"></span></span><input type="checkbox" value="1" id="membership" name="membership" data-toggle="checkbox">
+                                        <label class="checkbox" for="openRegistrations">
+                                            <span class="icons"><span class="first-icon fui-checkbox-unchecked"></span><span class="second-icon fui-checkbox-checked"></span></span><input type="checkbox" value="1" id="openRegistrations" name="openRegistrations" data-toggle="checkbox">
                                             Anyone can register
                                       </label>
                                     </div>
