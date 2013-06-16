@@ -33,6 +33,8 @@ This application is open-sourced software licensed under the [MIT license](http:
 <hr />
 ![http://i.imgur.com/gXqbtID.jpg](http://i.imgur.com/gXqbtID.jpg)<br />
 <hr />
+![http://i.imgur.com/LPaeTSW.jpg](http://i.imgur.com/LPaeTSW.jpg)<br />
+<hr />
 ![http://i.imgur.com/9Q1ACHy.jpg](http://i.imgur.com/9Q1ACHy.jpg)<br />
 
 ### About Laravel
