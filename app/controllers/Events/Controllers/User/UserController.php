@@ -95,10 +95,16 @@ class UserController extends BaseController
 	    if ($v->passes())
 	    {
 	    	$userModel = new User;
-	    	$userModel->postMyProfile($user);
-	    	Session::flush();
-	    	User::createSession();
-    		return Redirect::to('manager/profile');
+	    	if ($userModel->postMyProfile($user))
+    		{
+		    	Session::flush();
+		    	User::createSession();
+	    		return Redirect::to('manager/profile');
+	    	}
+	    	else
+    		{
+    			echo "Error...";
+    		}
 	    }
 	    else
     	{
