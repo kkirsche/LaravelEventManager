@@ -32,7 +32,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	/**
 	 * Put user information in the session for use later
 	 */
-	public function createSession()
+	public static function createSession()
 	{
 		Session::put('userID', Auth::user()->id);
 		Session::put('username', Auth::user()->username);
