@@ -58,6 +58,8 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	    $user->username 	= $userCredentials['username'];
 	    $user->displayName 	= $userCredentials['username'];
 	    $user->password 	= $userCredentials['hashedPassword'];
+	    $user->created_at	= date('Y-m-d H:i:s');
+		$user->updated_at	= date('Y-m-d H:i:s');
     	if ($user->save())
     	{
     		//Success
@@ -92,6 +94,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		$user->website		= $updatedProfileInformation['website'];
 		$user->role 		= $updatedProfileInformation['role'];
 		$user->password 	= (isset($updatedProfileInformation['hashedNewPassword'])) ? $updatedProfileInformation['hashedNewPassword'] : $user->password;
+		$user->updated_at	= date('Y-m-d H:i:s');
 
 		if ($user->save())
 		{
