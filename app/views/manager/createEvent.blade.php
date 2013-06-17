@@ -43,12 +43,12 @@
                         {{ Form::open(array('url' => '/manager/createEvent', 'class' => 'span9')) }}
                             <fieldset>
                                 <legend>General Event Details</legend>
-                                {{ Form::label('title', 'Title:') }}
-                                {{ Form::text('title', '', array('class' => 'span9', 'placeholder' => 'Title')) }}
-                                <label for="description">Event Description: <i class="icon-question-sign"></i></label>
-                                {{ Form::textarea('description', '', array('class' => 'span9', 'placeholder' => 'Event Description&hellip;')) }}
-                                {{ Form::label('capacity', 'Capacity:') }}
-                                {{ Form::text('capacity', '', array('class' => 'span4', 'placeholder' => 'Event Capacity')) }}
+                                {{ Form::label('eventName', 'Title:') }}
+                                {{ Form::text('eventName', '', array('class' => 'span9', 'placeholder' => 'Title')) }}
+                                <label for="eventDescription">Event Description: <i class="icon-question-sign"></i></label>
+                                {{ Form::textarea('eventDescription', '', array('class' => 'span9', 'placeholder' => 'Event Description&hellip;')) }}
+                                {{ Form::label('eventCapacity', 'Capacity:') }}
+                                {{ Form::text('eventCapacity', '', array('class' => 'span4', 'placeholder' => 'Event Capacity')) }}
                             </fieldset>
                             <fieldset>
                                 <legend>Who can register for this event?</legend>
@@ -65,46 +65,46 @@
                                 <legend>Event Location</legend>
                                 <div class="row">
                                     <div class="span4">
-                                        {{ Form::label('locationName', 'Location Name:') }}
-                                        {{ Form::text('locationName', '', array('class' => 'span4', 'placeholder' => 'Location Name')) }}
+                                        {{ Form::label('eventLocationName', 'Location Name:') }}
+                                        {{ Form::text('eventLocationName', '', array('class' => 'span4', 'placeholder' => 'Location Name')) }}
                                     </div>
                                     <div class="offset1 span4">
-                                        {{ Form::label('locationAddress1', 'Address 1:') }}
-                                        {{ Form::text('locationAddress1', '', array('class' => 'span4', 'placeholder' => 'Address 1')) }}
+                                        {{ Form::label('eventLocationAddress1', 'Address 1:') }}
+                                        {{ Form::text('eventLocationAddress1', '', array('class' => 'span4', 'placeholder' => 'Address 1')) }}
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="span4">
-                                        {{ Form::label('locationAddress2', 'Address 2:') }}
-                                        {{ Form::text('locationAddress2', '', array('class' => 'span4', 'placeholder' => 'Address 2')) }}
+                                        {{ Form::label('eventLocationAddress2', 'Address 2:') }}
+                                        {{ Form::text('eventLocationAddress2', '', array('class' => 'span4', 'placeholder' => 'Address 2')) }}
                                     </div>
                                     <div class="offset1 span4">
-                                        {{ Form::label('locationAddress3', 'Address 3:') }}
-                                        {{ Form::text('locationAddress3', '', array('class' => 'span4', 'placeholder' => 'Address 3')) }}
+                                        {{ Form::label('eventLocationAddress3', 'Address 3:') }}
+                                        {{ Form::text('eventLocationAddress3', '', array('class' => 'span4', 'placeholder' => 'Address 3')) }}
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="span4">
-                                        {{ Form::label('locationCity', 'City:') }}
-                                        {{ Form::text('locationCity', '', array('class' => 'span4', 'placeholder' => 'City')) }}
+                                        {{ Form::label('eventLocationCity', 'City:') }}
+                                        {{ Form::text('eventLocationCity', '', array('class' => 'span4', 'placeholder' => 'City')) }}
                                     </div>
                                     <div class="offset1 span4">
-                                        {{ Form::label('locationState', 'State:') }}
-                                        {{ Form::text('locationState', '', array('class' => 'span4', 'placeholder' => 'State')) }}
+                                        {{ Form::label('eventLocationState', 'State:') }}
+                                        {{ Form::text('eventLocationState', '', array('class' => 'span4', 'placeholder' => 'State')) }}
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="span3">
-                                        {{ Form::label('locationZip', 'ZIP/Postal Code:') }}
-                                        {{ Form::text('locationZip', '', array('class' => 'span3', 'placeholder' => 'ZIP/Postal Code')) }}
+                                        {{ Form::label('eventLocationZIP', 'ZIP/Postal Code:') }}
+                                        {{ Form::text('eventLocationZIP', '', array('class' => 'span3', 'placeholder' => 'ZIP/Postal Code')) }}
                                     </div>
                                     <div class="span3">
-                                        {{ Form::label('locationCountry', 'Country:') }}
-                                        {{ Form::text('locationCountry', '', array('class' => 'span3', 'placeholder' => 'Country')) }}
+                                        {{ Form::label('eventLocationCountry', 'Country:') }}
+                                        {{ Form::text('eventLocationCountry', '', array('class' => 'span3', 'placeholder' => 'Country')) }}
                                     </div>
                                     <div class="span3">
-                                        {{ Form::label('locationPhone', 'Phone Number:') }}
-                                        {{ Form::text('locationPhone', '', array('class' => 'span3', 'placeholder' => 'Phone Number')) }}
+                                        {{ Form::label('eventLocationPhone', 'Phone Number:') }}
+                                        {{ Form::text('eventLocationPhone', '', array('class' => 'span3', 'placeholder' => 'Phone Number')) }}
                                     </div>
                                 </div>
 
@@ -127,18 +127,18 @@
                                 </div>
                                 <div class="row">
                                     <div class="span4">
-                                        <label for="rsvpByDate"><i class="icon-calendar"></i> RSVP By Date:</label>
-                                        <input type="date" class="span4 hasDatepicker" id="rsvpByDate" name="rsvpByDate">
+                                        <label for="eventRSVPEndDate"><i class="icon-calendar"></i> RSVP By Date:</label>
+                                        <input type="date" class="span4 hasDatepicker" id="eventRSVPEndDate" name="eventRSVPEndDate">
                                     </div>
                                     <div class="offset1 span3">
-                                        <label for="publishEventDate"><i class="icon-calendar"></i> Publish Event Date:</label>
-                                        <input type="date" class="span4 hasDatepicker" id="publishEventDate" name="publishEventDate">
+                                        <label for="eventPublishDate"><i class="icon-calendar"></i> Publish Event Date:</label>
+                                        <input type="date" class="span4 hasDatepicker" id="eventPublishDate" name="eventPublishDate">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="span4">
-                                        <label for="archiveEventDate"><i class="icon-calendar"></i> Archive Event Date:</label>
-                                        <input type="date" class="span4 hasDatepicker" id="archiveEventDate" name="archiveEventDate">
+                                        <label for="eventArchiveDate"><i class="icon-calendar"></i> Archive Event Date:</label>
+                                        <input type="date" class="span4 hasDatepicker" id="eventArchiveDate" name="eventArchiveDate">
                                     </div>
                                 </div>
                             </fieldset>
